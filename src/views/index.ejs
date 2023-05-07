@@ -77,7 +77,7 @@
         <p class="humidity-data"><%= result.current.humidity %>%</p>
       </div>
       <div class="temp">
-        <p class="temp-data"><%= result.current.temp_c %>°</p>
+        <p class="temp-data"><%= Math.round(result.current.temp_c) %>°</p>
       </div>
       <div class="wind-mph">
         <div class="wind-mph-svg">
