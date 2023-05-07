@@ -10,19 +10,19 @@
 <body>
   <div class="father">
     <header class="info-location">
-      <p class="city">City</p>
-      <p class="country">Country</p>
+      <p class="city"><%= result.location.name %></p>
+      <p class="country"><%= result.location.country %></p>
     </header>
 
     <main class="info-weather">
-      <p class="weather">cloudy</p>
-      <img class="img-weather" src="https://cdn.weatherapi.com/weather/64x64/night/359.png" alt="">
+      <p class="weather"><%= result.current.condition.text %></p>
+      <img class="img-weather" src="<%= result.current.condition.icon %>" alt="">
     </main>
 
     <footer class="sub-info-weather">
-      <p class="humidity">20%</p>
-      <p class="temp">20°</p>
-      <p class="wind-mph">4 mph</p>
+      <p class="humidity"><%= result.current.humidity %>%</p>
+      <p class="temp"><%= result.current.temp_c %>°</p>      
+      <p class="wind-mph"><%= result.current.wind_mph %>mph</p>
     </footer>
   </div>
   <script src="/js/script.js"></script>
