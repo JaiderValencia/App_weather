@@ -9,9 +9,21 @@
 
 <body>
   <div class="father">
-    <header class="info-location">
-      <p class="city"><%= result.location.name %></p>
-      <p class="country"><%= result.location.country %></p>
+    <header class="info-location">    
+      <div class="wave-group">
+        <input required="" type="text" class="input-city">
+        <span class="bar"></span>
+        <label class="label">
+          <span class="label-char" style="--index: 0">C</span>
+          <span class="label-char" style="--index: 1">i</span>
+          <span class="label-char" style="--index: 2">t</span>
+          <span class="label-char" style="--index: 3">y</span>
+        </label>
+      </div>
+      <div class="location">
+        <p class="city"><%= result.location.name %></p>
+        <p class="country"><%= result.location.country %></p>
+      </div>
     </header>
 
     <main class="info-weather">
