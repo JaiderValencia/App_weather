@@ -10,8 +10,11 @@ window.addEventListener('load', () => {
         const pTemp = document.querySelector('p.temp-data');
         const pWind = document.querySelector('p.wind-mph-data');
 
-        const result = await fetch(`https://api.weatherapi.com/v1/current.json?key=c4f2cbb0ab214c09afd40442230605&q=${inputCity.value}`)
-            .then(response => response.json());
+        const result = await fetch(`https://api.weatherapi.com/v1/current.json?key=c4f2cbb0ab214c09afd40442230605&q=${inputCity.value.toUpperCase()}`)
+            .then(response => response.json())
+            .catch(e=>{
+                console.log(e)
+            });
 
         pLocationCity.innerText = result.location.name;
 
