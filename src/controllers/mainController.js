@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 const controller = {
     index: async (req, res) => {
-        const result = await fetch('https://api.weatherapi.com/v1/current.json?key=c4f2cbb0ab214c09afd40442230605&q=medellin')
+        const result = await fetch('https://api.weatherapi.com/v1/current.json?key=c4f2cbb0ab214c09afd40442230605&q=sincelejo')
             .then(response => response.json());
 
         let weatherClass;
@@ -29,10 +29,15 @@ const controller = {
             }
         }
 
-        for (const key in temps) {
-            if (result.current.temp_c >= temps[key].between.min && result.current.temp_c <= temps[key].between.max) {
-                weatherClass = `${key}-background-color`;
-                weatherRoundedClass = `${key}-rounded-background`;
+        weatherClass = 'rainy-background-color';
+        weatherRoundedClass = 'rainy-rounded-background';
+
+        if (!result.current.condition.text.includes('rain')) {
+            for (const key in temps) {
+                if (result.current.temp_c >= temps[key].between.min && result.current.temp_c <= temps[key].between.max) {
+                    weatherClass = `${key}-background-color`;
+                    weatherRoundedClass = `${key}-rounded-background`;
+                }
             }
         }
 

@@ -36,15 +36,25 @@ window.addEventListener('load', () => {
         const result = await fetch(`https://api.weatherapi.com/v1/current.json?key=c4f2cbb0ab214c09afd40442230605&q=${inputCity.value.toUpperCase()}`)
             .then(response => response.json())
 
-        for (const key in temps) {
-            body.classList.remove(`${key}-background-color`);
+        body.classList.add('rainy-background-color');
 
-            footer.classList.remove(`${key}-rounded-background`);
+        footer.classList.add('rainy-rounded-background');
 
-            if (result.current.temp_c >= temps[key].between.min && result.current.temp_c <= temps[key].between.max) {
-                body.classList.add(`${key}-background-color`);
+        if (!result.current.condition.text.includes('rain')) {
+            body.classList.remove('rainy-background-color');
 
-                footer.classList.add(`${key}-rounded-background`);
+            footer.classList.remove('rainy-rounded-background');
+
+            for (const key in temps) {
+                body.classList.remove(`${key}-background-color`);
+
+                footer.classList.remove(`${key}-rounded-background`);
+
+                if (result.current.temp_c >= temps[key].between.min && result.current.temp_c <= temps[key].between.max) {
+                    body.classList.add(`${key}-background-color`);
+
+                    footer.classList.add(`${key}-rounded-background`);
+                }
             }
         }
 
@@ -60,6 +70,6 @@ window.addEventListener('load', () => {
 
         pTemp.innerText = `${result.current.temp_c}°`;
 
-        pWind.innerText = `${result.current.wind_mph}`;
+        pWind.innerText = `${result.current.wind_mph}mph`;
     })
 })
