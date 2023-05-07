@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="<%= weatherClass %>">
   <div class="father">
     <header class="info-location">    
       <div class="wave-group">
@@ -31,7 +31,7 @@
       <img class="img-weather" src="<%= result.current.condition.icon %>" alt="">
     </main>
 
-    <footer class="sub-info-weather">
+    <footer class="sub-info-weather <%= weatherRoundedClass %>">
       <div class="humidity">
         <div class="humidity-svg">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="792px" height="792px" viewBox="0 0 792 792" style="enable-background:new 0 0 792 792;" xml:space="preserve">

@@ -15,7 +15,8 @@ body {
     align-items: center;
 }
 
-.cool-background-color {
+.cool-background-color,
+.cold-background-color {
     background-color: #6CA3FF;
 }
 
@@ -57,9 +58,28 @@ footer.sub-info-weather {
     width: 100%;
     align-items: center;
     justify-content: space-between;
+}
+
+.cool-rounded-background,
+.cold-rounded-background {
     border-radius: 56px;
     background: #5b79ec;
-    box-shadow: -26px -26px 53px #4e68cb, 26px 26px 53px #688aff;
+    box-shadow: -26px -26px 53px #4e68cb,
+        26px 26px 53px #688aff;
+}
+
+.heat-rounded-background {
+    border-radius: 56px;
+    background: #F2A14E;
+    box-shadow: -26px -26px 53px #ce8942,
+        26px 26px 53px #ffb95a;
+}
+
+.rainy-rounded-background {
+    border-radius: 56px;
+    background: linear-gradient(145deg, #bbe6e4, #9ec2c0);
+    box-shadow: -26px -26px 53px #add5d3,
+        26px 26px 53px #b1d9d7;
 }
 
 main.info-weather {
