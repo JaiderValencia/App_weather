@@ -154,3 +154,7 @@ div.wind-mph {
 .wave-group .input-city:focus~.bar:after {
     width: 50%;
 }
+
+div.location {  
+    margin-top: 34px;
+}
