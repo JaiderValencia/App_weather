@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 const controller = {
     index: async (req, res) => {
-        const result = await fetch('https://api.weatherapi.com/v1/current.json?key=c4f2cbb0ab214c09afd40442230605&q=sincelejo')
+        const result = await fetch('https://api.weatherapi.com/v1/current.json?key=c4f2cbb0ab214c09afd40442230605&q=medellin')
             .then(response => response.json());
 
         let weatherClass;
