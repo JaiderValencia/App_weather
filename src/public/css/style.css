@@ -30,7 +30,7 @@ p.city {
     font-weight: bold;
 }
 
-p.temp {
+p.temp-data {
     font-size: 3em;
     font-weight: bold;
 }
@@ -42,9 +42,10 @@ p.weather {
 
 footer.sub-info-weather {
     display: flex;
+    padding: 0 30px;
     width: 100%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 56px;
     background: #5b79ec;
     box-shadow: -26px -26px 53px #4e68cb, 26px 26px 53px #688aff;
@@ -54,9 +55,29 @@ main.info-weather {
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.wind-mph-svg svg,
+div.humidity-svg svg {
+    color: white !important;
+    width: 20px;
+    height: 20px;
+}
+
+div.wind-mph-svg svg path,
+div.humidity-svg svg path {
+    fill: white
+}
+
+div.humidity,
+div.wind-mph {
     display: flex;
     flex-direction: column;
     align-items: center;
